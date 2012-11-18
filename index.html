@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html manifest="" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+	
+    <style type="text/css">
+        /**
+         * Example of an initial loading indicator.
+         * It is recommended to keep this as minimal as possible to provide instant feedback
+         * while other resources are still being loaded for the first time
+         */
+        html, body {
+            height: 100%;
+        }
+
+        #logoLoader {
+            position: absolute;
+            top: 21%;
+            left: 41%;
+            margin-top: -10px;
+            margin-left: -50px;
+            width: 100px;
+            height: 20px;
+        }
+
+        #appLoadingIndicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -10px;
+            margin-left: -50px;
+            width: 100px;
+            height: 20px;
+        }
+
+        #appLoadingIndicator > * {
+            background-color: #FFFFFF;
+            float: left;
+            height: 10px;
+            margin-left: 11px;
+            width: 10px;
+            -webkit-animation-name: appLoadingIndicator;
+            -webkit-border-radius: 5px;
+            -webkit-animation-duration: 0.8s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: linear;
+            opacity: 0.3
+        }
+
+        #appLoadingIndicator > :nth-child(1) {
+            -webkit-animation-delay: 0.18s;
+        }
+
+        #appLoadingIndicator > :nth-child(2) {
+            -webkit-animation-delay: 0.42s;
+        }
+
+        #appLoadingIndicator > :nth-child(3) {
+            -webkit-animation-delay: 0.54s;
+        }
+
+        #appLoadingIndicator > :nth-child(4) {
+            -webkit-animation-delay: 0.76s;
+        }
+
+        @-webkit-keyframes appLoadingIndicator{
+            0% {
+                opacity: 0.3
+            }
+
+            50% {
+                opacity: 1;
+                background-color:#1985D0
+            }
+
+            100% {
+                opacity:0.3
+            }
+        }
+	
+	.white {
+		color: #ffffff !important;
+	}
+	
+
+.list-item-title
+{
+    float:left;
+    width:100%;
+    font-size:90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right:25px;
+    line-height:150%;
+}
+.list-item-narrative
+{
+    float:left;
+    width:95%;
+    color:#666666;
+    font-size:80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right:25px;
+}
+.x-item-selected .list-item-title
+{
+    color:#ffffff;
+}
+.x-item-selected .list-item-narrative
+{
+    color:#ffffff;
+}
+.notes-list-empty-text
+{
+    padding:10px;
+}
+
+    </style>
+    
+	<script id="microloader" type="text/javascript" src="sdk/microloader/development.js"></script>
+	<link rel="stylesheet" href="sdk/resources/css/myTheme.css" type="text/css">
+	</head>
+<body>
+    <div id="logoLoader"><img src="resources/images/loading-logo.png" /></div>
+	<div id="appLoadingIndicator">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
