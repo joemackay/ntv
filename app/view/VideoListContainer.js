@@ -110,15 +110,13 @@ Ext.define("NTV.view.VideoListContainer", {
                 { 
                     xtype: 'spacer' 
                 },
-                { 
-                    xtype: 'spacer' 
-                },
                 {
                     xtype   : 'button',
                     iconMask: true,
+                    //id      : refreshList,
                     cls     : 'btnx greyed',
                     iconCls : 'refresh2',
-                    //handler : this.onMenuButtonTap,
+                    handler : this.onRefreshButtonTap,
                     scope: this
                 },
                 { 
@@ -155,6 +153,17 @@ Ext.define("NTV.view.VideoListContainer", {
             listeners  : {
                 //itemtap: { fn: this.onVideoListDisclose, scope: this }
             },
+            plugins: [
+            {
+                type: 'pullrefresh',
+                pullRefreshText: 'Pull down to refresh Videos!'
+            }, 
+            {
+                type: 'listpaging',
+                autoPaging: true,
+                loadMoreText: ''
+            }
+        ], 
         };        
         this.add([topToolBar, latestList, playList, bottomToolBar]);
     },
@@ -166,6 +175,9 @@ Ext.define("NTV.view.VideoListContainer", {
     },
     onSearchButtonTap: function () {
         this.fireEvent('searchCommand');
+    },
+    onRefreshButtonTap: function () {
+        this.fireEvent('onRefreshCommand');
     },
     onMenuButtonTap: function () {
         this.fireEvent('onMenuCommand');

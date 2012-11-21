@@ -8,7 +8,7 @@ Ext.define('NTV.model.User', {
         }],
         proxy: {
             type: 'jsonp',
-            url: 'http://localhost/Notes/php/checkUser.php',
+            url: 'http://localhost/Notes/ntvApp/checkUser.php',
             reader: {
                 type: 'json',
                 rootProperty: 'results'

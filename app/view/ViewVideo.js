@@ -174,7 +174,7 @@ Ext.define("NTV.view.ViewVideo", {
                 
                 proxy: {
                     type: 'jsonp',
-                    url: 'http://localhost/Notes/php/readReviews.php?videoid=' + this.config.videoId,
+                    url: 'http://localhost/Notes/ntvApp/readReviews.php?videoid=' + this.config.videoId,
                     reader: {
                         type: 'json',
                         rootProperty: 'reviews'

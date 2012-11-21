@@ -48,6 +48,7 @@ Ext.define("NTV.view.OverlayComment", {
                     {
                         xtype   : 'textareafield',
                         name    : 'comments',
+                        height  : Ext.os.deviceType=='phone'? 150 : 300,
                     }                        
                 ]
             },

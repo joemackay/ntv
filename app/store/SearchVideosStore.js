@@ -3,7 +3,7 @@ Ext.define('NTV.store.SearchVideosStore', {
 	requires: ['Ext.data.proxy.JsonP'],
 	config  : {
 		model     : 'NTV.model.Video',
-		videosURL : 'http://briteskills.com/gdata/NTVRssSearchVideos.php?sc=',
+		videosURL : 'http://briteskills.com/ntvApp/NTVRssSearchVideos.php?sc=',
 		proxy     : {
             type    : 'jsonp',
             url     : this.videosURL + '0',

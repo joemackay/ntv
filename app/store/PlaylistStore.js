@@ -7,7 +7,7 @@
 		autoLoad: true,
 		proxy: {
             type: 'jsonp',
-            url:'http://briteskills.com/gdata/NTVRssPlaylist.php',
+            url:'http://briteskills.com/ntvApp/NTVRssPlaylist.php',
             
             reader: {
                 type         :'json',

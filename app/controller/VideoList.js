@@ -30,6 +30,7 @@ Ext.define('NTV.controller.VideoList', {
             videoListContainer  :  {
                     onMenuCommand : 'showMenuOverlay',
                     searchCommand : 'activateSearchBar',
+                    onRefreshCommand: 'onRefreshListCommand',
             },
             searchBar   : {
                 backToHomeCommand   : "onBackToHomeCommand",                 
@@ -176,6 +177,27 @@ Ext.define('NTV.controller.VideoList', {
             }
         });        
     },
+    onRefreshListCommand: function (me, index, target, record, e, eOpts) {
+        var cont = this.getVideoListContainer();
+        //this.getApplication().getController('MeetchaTitleBar').enableHomeView();
+        this.getApplication().getController('ViewVideo').setCurrentStore('ListVideosStore');
+        Ext.Viewport.setMasked({
+            xtype: 'loadmask',
+            message: 'Loading videos',
+            indicator: true,
+        });
+        var me            = this,
+            videosStore   = Ext.create('NTV.store.ListVideosStore');//,
+        
+        videosStore.load({
+            callback: function() {
+                Ext.Viewport.unmask();
+                cont.setActiveItem(
+                    {xtype: 'videolist', store: videosStore}
+                );
+            }
+        });        
+    },
     /**saving an item - especially videos I like**/
     registerUser : function() {
         var regForm  = this.getRegisterPage();
@@ -189,8 +211,8 @@ Ext.define('NTV.controller.VideoList', {
                 indicator: true,
             });
             Ext.data.JsonP.request({
-                //url: 'http://briteskills.com/gdata/registerUser.php',
-                url: 'http://localhost/Notes/php/registerUser.php',
+                //url: 'http://briteskills.com/ntvApp/registerUser.php',
+                url: 'http://localhost/Notes/ntvApp/registerUser.php',
                 disableCaching: false,
                 callbackKey: 'callback',
                 params: {
@@ -231,8 +253,8 @@ Ext.define('NTV.controller.VideoList', {
                 indicator: true,
             });
             Ext.data.JsonP.request({
-                //url: 'http://briteskills.com/gdata/registerUser.php',
-                url: 'http://localhost/Notes/php/loginUser.php',
+                //url: 'http://briteskills.com/ntvApp/registerUser.php',
+                url: 'http://localhost/Notes/ntvApp/loginUser.php',
                 disableCaching: false,
                 callbackKey: 'callback',
                 params: {

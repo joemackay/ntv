@@ -7,7 +7,7 @@ Ext.define('NTV.store.ReviewsStore', {
 		autoLoad: true,
 		proxy: {
             type: 'jsonp',
-            url:'http://localhost/Notes/php/saveReviews.php',
+            url:'http://localhost/Notes/ntvApp/saveReviews.php',
             
             reader: {
                 type:'json',

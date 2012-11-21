@@ -69,8 +69,8 @@ Ext.define('NTV.controller.ViewVideo', {
                     indicator: true,
                 });
                 Ext.data.JsonP.request({
-                    //url: 'http://briteskills.com/gdata/saveReviews.php',
-                    url: 'http://localhost/Notes/php/saveReviews.php',
+                    //url: 'http://briteskills.com/ntvApp/saveReviews.php',
+                    url: 'http://localhost/Notes/ntvApp/saveReviews.php',
                     method: 'POST',
                     params: {
                         video_id: currentId,
@@ -99,7 +99,7 @@ Ext.define('NTV.controller.ViewVideo', {
                 Ext.Msg.alert('Error', 'Please enter comments.');
             } 
         } else {
-            Ext.Msg.alert('Please login', 'You must be logged in to post comments.');
+            Ext.Msg.alert('Please login', 'Please login in to add comments.');
         }   
     
     },

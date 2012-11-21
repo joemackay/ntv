@@ -7,7 +7,7 @@ Ext.define('NTV.store.ListVideosStore', {
 		autoLoad  : true,
 		proxy     : {
             type    : 'jsonp',
-            url     :'http://briteskills.com/gdata/NTVRss.php',
+            url     :'http://briteskills.com/ntvApp/NTVRss.php',
             reader  : {
                 type:'json',
                 rootProperty:'videos',

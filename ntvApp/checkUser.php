@@ -1,6 +1,6 @@
 <?php
 require_once ("config.php");
-if($_COOKIE['NtvVidzAppUserId'] && $_COOKIE['NtvVidzAppUserEmail']){
+if(isset($_COOKIE['NtvVidzAppUserId']) && isset($_COOKIE['NtvVidzAppUserEmail'])){
     jsonEcho(json_encode(array('results' => array('id' => $_COOKIE['NtvVidzAppUserId'], 'email' => $_COOKIE['NtvVidzAppUserEmail']))));
 }else{
     jsonEcho(json_encode(array('results' => array('id' => -1))));
